@@ -1,0 +1,84 @@
+version: '3.8'
+
+services:
+  # Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: bws-postgres
+    environment:
+      POSTGRES_DB: bws_db
+      POSTGRES_USER: bws_user
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - bws-network
+
+  # Redis for caching
+  redis:
+    image: redis:7-alpine
+    container_name: bws-redis
+    ports:
+      - "6379:6379"
+    networks:
+      - bws-network
+
+  # n8n workflow automation
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: bws-n8n
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=${N8N_USER}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_PASSWORD}
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=bws_db
+      - DB_POSTGRESDB_USER=bws_user
+      - DB_POSTGRESDB_PASSWORD=${POSTGRES_PASSWORD}
+      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./config/n8n/flows:/flows
+    ports:
+      - "5678:5678"
+    depends_on:
+      - postgres
+    networks:
+      - bws-network
+
+  # Ollama for local LLM
+  ollama:
+    image: ollama/ollama:latest
+    container_name: bws-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    networks:
+      - bws-network
+
+  # Vector database (Qdrant)
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: bws-qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    networks:
+      - bws-network
+
+volumes:
+  postgres_data:
+  n8n_data:
+  ollama_data:
+  qdrant_data:
+
+networks:
+  bws-network:
+    driver: bridge

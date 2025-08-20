@@ -1,0 +1,276 @@
+
+PROJEKT: BWS - Kielce
+
+DATA ROZMOWY: 2025-08-20
+
+OPIS:
+Projekt dotyczy przygotowania i montażu dekoracji roślinnych na targach w Kielcach, które odbędą się 1 września. Celem jest stworzenie szczegółowego planu obejmującego zadania, zasoby, logistykę, harmonogram oraz identyfikację ryzyk i otwartych kwestii.
+
+ZAWARTOŚĆ PLIKU PROJEKTOWEGO:
+# Projekt: BWS - Kielce
+
+## Cel:
+Opracowanie szczegółowego planu projektu, który obejmuje zadania, analizę zasobów, planowanie i znalezienie wszystkich potrzebnych materiałów, noclegów itp.
+
+## Dane wejściowe:
+- Data rozpoczęcia targów: 1 września
+- Montaż: Zakończenie w sobotę, wyjazd w piątek rano
+- Lokalizacja: Kielce, ulica Zakładowa 1
+- Powierzchnia ścianek: 17m² z mchu, 17m² z roślin (łącznie 34m²)
+- Materiały: Panele do ścianek, klej, materiał tekstylny, dykta/cienkie panele, kieszenie na rośliny, rośliny
+- Noclegi: Do zorganizowania
+- Wykonawcy: Do ustalenia
+- Transport roślin: Trasa, terminy, osoby odpowiedzialne, pojazd
+- Otwarte kwestie: Potwierdzenie od klienta, specyfikacja materiałów, noclegi, ludzie, samochód
+
+## Zadania:
+1. Opracowanie listy zadań z estymacjami w roboczogodzinach
+2. Przydzielenie zasobów (liczba osób per zadanie)
+3. Zweryfikowanie dostępności i cen paneli na aloweogrodowe.pl
+4. Określenie wymaganą liczbę paneli i złożenie zamówienia z dostawą do piątku
+5. Potwierdzenie specyfikacji materiałów (rodzaj materiału tekstylnego/„wykładziny”, typ kleju, grubość dykty)
+6. Zweryfikowanie finalnej liczby kieszeni na rośliny i źródło zakupu
+7. Przygotowanie planu transportu roślin (trasa, terminy, osoby odpowiedzialne, pojazd)
+8. Zorganizowanie noclegów dla zespołu
+9. Dogadanie ludzi do wykonania paneli i montażu
+10. Zarezerwowanie samochodu
+11. Przygotowanie szczegółowego harmonogramu przygotowań i montażu wraz z kamieniami milowymi
+12. Sprawdzenie stanu zamówionych materiałów i paneli
+13. Przygotowanie narzędzi i materiałów do montażu
+14. Pakowanie i przygotowanie do wyjazdu
+15. Ostateczne potwierdzenie wszystkich szczegółów
+16. Wyjazd do Kielc
+17. Rozpoczęcie montażu dekoracji
+18. Kontynuacja montażu dekoracji
+19. Sprawdzenie postępów i ewentualne korekty
+20. Zakończenie montażu dekoracji
+21. Przygotowanie stoisk na targi
+
+## Wymagania:
+- Szczegółowy opis każdego zadania
+- Analiza potrzebnych zasobów (materiały, narzędzia, ludzie)
+- Planowanie i znalezienie wszystkich potrzebnych materiałów, noclegów itp.
+- Harmonogram z podziałem na dni
+
+## Podpowiedzi:
+1. **Opracowanie listy zadań z estymacjami w roboczogodzinach**:
+   - Podziel zadania na mniejsze etapy
+   - Oszacuj czas potrzebny na wykonanie każdego zadania
+   - Przypisz odpowiedzialne osoby do każdego zadania
+
+2. **Przydzielenie zasobów (liczba osób per zadanie)**:
+   - Określ liczbę osób potrzebnych do wykonania każdego zadania
+   - Upewnij się, że zasoby są odpowiednio rozdzielone
+
+3. **Zweryfikowanie dostępności i cen paneli na aloweogrodowe.pl**:
+   - Sprawdź dostępność paneli
+   - Porównaj ceny różnych dostawców
+
+4. **Określenie wymaganą liczbę paneli i złożenie zamówienia z dostawą do piątku**:
+   - Oblicz liczbę paneli potrzebnych do pokrycia 34m²
+   - Złóż zamówienie z odpowiednim wyprzedzeniem
+
+5. **Potwierdzenie specyfikacji materiałów (rodzaj materiału tekstylnego/„wykładziny”, typ kleju, grubość dykty)**:
+   - Ustal dokładne specyfikacje materiałów
+   - Skonsultuj się z dostawcami, aby upewnić się, że materiały spełniają wymagania
+
+6. **Zweryfikowanie finalnej liczby kieszeni na rośliny i źródło zakupu**:
+   - Sprawdź, czy liczba 15 kieszeni jest wystarczająca
+   - Znajdź odpowiednie źródło zakupu
+
+7. **Przygotowanie planu transportu roślin (trasa, terminy, osoby odpowiedzialne, pojazd)**:
+   - Ustal trasę transportu roślin
+   - Określ terminy i osoby odpowiedzialne za transport
+   - Zarezerwuj odpowiedni pojazd
+
+8. **Zorganizowanie noclegów dla zespołu**:
+   - Znajdź odpowiednie miejsca noclegowe w Kielcach
+   - Zarezerwuj noclegi dla całego zespołu
+
+9. **Dogadanie ludzi do wykonania paneli i montażu**:
+   - Skontaktuj się z potencjalnymi wykonawcami
+   - Ustal warunki współpracy i harmonogram prac
+
+10. **Zarezerwowanie samochodu**:
+    - Znajdź odpowiedni samochód do transportu materiałów i narzędzi
+    - Zarezerwuj samochód na odpowiedni termin
+
+11. **Przygotowanie szczegółowego harmonogramu przygotowań i montażu wraz z kamieniami milowymi**:
+    - Podziel harmonogram na etapy
+    - Ustal kamienie milowe i terminy ich realizacji
+
+12. **Sprawdzenie stanu zamówionych materiałów i paneli**:
+    - Skontroluj stan zamówionych materiałów po ich dostarczeniu
+    - Upewnij się, że wszystko jest zgodne z zamówieniem
+
+13. **Przygotowanie narzędzi i materiałów do montażu**:
+    - Zgromadź wszystkie potrzebne narzędzia i materiały
+    - Sprawdź, czy wszystko jest gotowe do montażu
+
+14. **Pakowanie i przygotowanie do wyjazdu**:
+    - Spakuj wszystkie materiały i narzędzia
+    - Przygotuj się do wyjazdu
+
+15. **Ostateczne potwierdzenie wszystkich szczegółów**:
+    - Upewnij się, że wszystkie szczegóły są potwierdzone
+    - Skontaktuj się z klientem, aby potwierdzić realizację
+
+16. **Wyjazd do Kielc**:
+    - Zorganizuj wyjazd do Kielc
+    - Upewnij się, że wszystko jest gotowe do montażu
+
+17. **Rozpoczęcie montażu dekoracji**:
+    - Rozpocznij montaż dekoracji zgodnie z planem
+    - Monitoruj postępy prac
+
+18. **Kontynuacja montażu dekoracji**:
+    - Kontynuuj montaż dekoracji
+    - Sprawdzaj postępy i wprowadzaj ewentualne korekty
+
+19. **Sprawdzenie postępów i ewentualne korekty**:
+    - Regularnie sprawdzaj postępy prac
+    - Wprowadzaj ewentualne korekty
+
+20. **Zakończenie montażu dekoracji**:
+    - Zakończ montaż dekoracji
+    - Upewnij się, że wszystko jest zgodne z planem
+
+21. **Przygotowanie stoisk na targi**:
+    - Przygotuj stoiska na targi
+    - Upewnij się, że wszystko jest gotowe na rozpoczęcie targów
+
+## Wynik:
+Szczegółowy plan projektu w formacie tekstowym, gotowy do zaimportowania do Microsoft Planner.
+
+
+
+szczegóły do opracowania: 
+*Oczywiście, Norbert! Dodam harmonogram z podziałem na dni, abyśmy mieli jasny plan działania.
+1. Data rozpoczęcia targów
+Data: 1 września
+Montaż: Zakończenie w sobotę, wyjazd w piątek rano
+2. Plan działania
+Priorytety: Realizacja od najbardziej skomplikowanych do najprostszych
+Segmentacja prac: Jasno zdefiniowane zadania z kolejnością wykonania
+Szacowanie zasobów i czasu: Użycie roboczogodzin do estymacji (np. zadanie 8 roboczogodzin = 2 osoby po 4h)
+Przydział ról: Określenie liczby osób przydzielonych do kluczowych zadań
+3. Materiały
+Panele do ścianek: 17m² z mchu, 17m² z roślin (łącznie 34m²)
+Klej: Do ustalenia
+Materiał tekstylny: Ruchomy, coś jak wykładzina
+Dykta/cienkie panele: Jako podkład
+Kieszenie na rośliny: 15 sztuk (wszystkie zakupione)
+Rośliny: Sposób transportu i harmonogram dowozu
+4. Lokalizacja
+Adres: Kielce, ulica Zakładowa 1
+5. Noclegi
+Status: Do zorganizowania
+6. Wykonawcy
+Status: Do ustalenia
+7. Logistyka
+Transport roślin: Trasa, terminy, osoby odpowiedzialne, pojazd
+8. Otwarte kwestie i ryzyka
+Potwierdzenie od klienta: Brak
+Specyfikacja materiałów: Do ustalenia (rodzaj materiału tekstylnego, typ kleju)
+Noclegi: Do zorganizowania
+Ludzie: Do dogadania
+Samochód: Do zarezerwowania
+9. Harmonogram z podziałem na dni
+22 sierpnia
+ Potwierdzenie od klienta
+ Opracowanie listy zadań z estymacjami w roboczogodzinach
+ Przydzielenie zasobów (liczba osób per zadanie)
+23 sierpnia
+ Zweryfikowanie dostępności i cen paneli na aloweogrodowe.pl
+ Określenie wymaganą liczbę paneli i złożenie zamówienia z dostawą do piątku
+24 sierpnia
+ Potwierdzenie specyfikacji materiałów (rodzaj materiału tekstylnego/„wykładziny”, typ kleju, grubość dykty)
+ Zweryfikowanie finalnej liczby kieszeni na rośliny i źródło zakupu
+25 sierpnia
+ Przygotowanie planu transportu roślin (trasa, terminy, osoby odpowiedzialne, pojazd)
+ Zorganizowanie noclegów dla zespołu
+26 sierpnia
+ Dogadanie ludzi do wykonania paneli i montażu
+ Zarezerwowanie samochodu
+27 sierpnia
+ Przygotowanie szczegółowego harmonogramu przygotowań i montażu wraz z kamieniami milowymi
+28 sierpnia
+ Sprawdzenie stanu zamówionych materiałów i paneli
+ Przygotowanie narzędzi i materiałów do montażu
+29 sierpnia
+ Pakowanie i przygotowanie do wyjazdu
+ Ostateczne potwierdzenie wszystkich szczegółów
+30 sierpnia
+ Wyjazd do Kielc
+ Rozpoczęcie montażu dekoracji
+31 sierpnia
+ Kontynuacja montażu dekoracji
+ Sprawdzenie postępów i ewentualne korekty
+1 września
+ Zakończenie montażu dekoracji
+
+
+
+**mniejszy poziom szczegółowości, ale może ważniejsze główne zadania:
+Plan Projektu: BWS - Kielce
+1. Data rozpoczęcia targó
+Data: 1 września
+Montaż: Zakończenie w sobotę, wyjazd w piątek rano
+2. Plan działania
+Priorytety: Realizacja od najbardziej skomplikowanych do najprostszych
+Segmentacja prac: Jasno zdefiniowane zadania z kolejnością wykonania
+Szacowanie zasobów i czasu: Użycie roboczogodzin do estymacji (np. zadanie 8 roboczogodzin = 2 osoby po 4h)
+Przydział ról: Określenie liczby osób przydzielonych do kluczowych zadań
+3. Materiały
+Panele do ścianek: 17m² z mchu, 17m² z roślin (łącznie 34m²)
+Klej: Do ustalenia
+Materiał tekstylny: Ruchomy, coś jak wykładzina
+Dykta/cienkie panele: Jako podkład
+Kieszenie na rośliny: 15 sztuk (wszystkie zakupione)
+Rośliny: Sposób transportu i harmonogram dowozu
+4. Lokalizacja
+Adres: Kielce, ulica Zakładowa 1
+5. Noclegi
+Status: Do zorganizowania
+6. Wykonawcy
+Status: Do ustalenia
+7. Logistyka
+Transport roślin: Trasa, terminy, osoby odpowiedzialne, pojazd
+8. Otwarte kwestie i ryzyka
+Potwierdzenie od klienta: Brak
+Specyfikacja materiałów: Do ustalenia (rodzaj materiału tekstylnego, typ kleju)
+Noclegi: Do zorganizowania
+Ludzie: Do dogadania
+Samochód: Do zarezerwowania
+9. Zadania do wykonania
+ Opracować listę zadań z kolejnością od najtrudniejszych do najprostszych oraz estymacjami w roboczogodzinach
+ Przydzielić zasoby (liczba osób per zadanie) na podstawie estymacji
+ Zweryfikować dostępność i ceny paneli na aloweogrodowe.pl oraz potwierdzić model objęty promocją
+ Określić wymaganą liczbę paneli i złożyć zamówienie z dostawą do piątku
+ Potwierdzić specyfikację materiałów (rodzaj materiału tekstylnego/„wykładziny”, typ kleju, grubość dykty)
+ Zweryfikować finalną liczbę kieszeni na rośliny (bazowo 15 szt.) i źródło zakupu
+ Przygotować plan transportu roślin (trasa, terminy, osoby odpowiedzialne, pojazd)
+ Zdefiniować szczegółowy harmonogram przygotowań i montażu wraz z kamieniami milowymi
+
+DZIAŁANIA WYKONANE W RAMACH ROZMOWY:
+1. Analiza pliku projektu i jego struktury.
+2. Zliczenie liczby słów w pliku.
+3. Stworzenie harmonogramu Gantta z podziałem na dni i zadania.
+4. Wygenerowanie pliku CSV do importu do Microsoft Planner.
+5. Identyfikacja otwartych kwestii:
+   - Brak potwierdzenia od klienta
+   - Nieustalona specyfikacja materiałów (klej, tekstylia)
+   - Brak zorganizowanych noclegów
+   - Brak przypisanych wykonawców
+   - Niezarezerwowany samochód
+6. Wyzwania:
+   - Koordynacja wielu zadań w krótkim czasie
+   - Logistyka transportu roślin
+   - Zakupy i dostępność materiałów
+   - Harmonizacja pracy zespołu
+
+REZULTATY:
+- Wykres Gantta w formacie PNG
+- Plik CSV do importu do Microsoft Planner
+- Niniejszy plik tekstowy jako pełne podsumowanie projektu
+

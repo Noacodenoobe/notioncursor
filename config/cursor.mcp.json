@@ -1,0 +1,35 @@
+{
+  "mcpServers": {
+    "bws-stack": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/workspace"],
+      "env": {
+        "MCP_SERVER_FILESYSTEM_ROOT": "/workspace"
+      }
+    },
+    "notion-integration": {
+      "command": "node",
+      "args": ["notion-mcp-server.js"],
+      "env": {
+        "NOTION_API_KEY": "${NOTION_API_KEY}",
+        "NOTION_DATABASE_ID_TASKS": "${NOTION_DATABASE_ID_TASKS}",
+        "NOTION_DATABASE_ID_MATERIALS": "${NOTION_DATABASE_ID_MATERIALS}",
+        "NOTION_DATABASE_ID_RISKS": "${NOTION_DATABASE_ID_RISKS}",
+        "NOTION_DATABASE_ID_TEAM": "${NOTION_DATABASE_ID_TEAM}"
+      }
+    },
+    "ollama-assistant": {
+      "command": "python",
+      "args": ["ollama_mcp_server.py"],
+      "env": {
+        "OLLAMA_HOST": "http://localhost:11434",
+        "OLLAMA_MODEL": "llama2:13b"
+      }
+    }
+  },
+  "experimental": {
+    "mcp": {
+      "enabled": true
+    }
+  }
+}
