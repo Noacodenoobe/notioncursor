@@ -62,8 +62,12 @@ if ! command_exists docker; then
     exit 1
 fi
 
-# Check Docker Compose
-if ! command_exists docker-compose; then
+# Check Docker Compose (classic or plugin)
+if command_exists docker-compose; then
+    print_success "Docker Compose (v1) is installed"
+elif docker compose version >/dev/null 2>&1; then
+    print_success "Docker Compose (plugin) is available"
+else
     print_error "Docker Compose is not installed. Please install Docker Compose first."
     print_status "Visit: https://docs.docker.com/compose/install/"
     exit 1
@@ -114,11 +118,19 @@ fi
 
 # Make scripts executable
 print_status "Setting up scripts..."
-chmod +x scripts/*.sh
+chmod +x scripts/*.sh || true
 
 # Pull Docker images
 print_status "Pulling Docker images..."
-docker-compose pull
+if [ -x scripts/compose.sh ]; then
+    scripts/compose.sh pull
+else
+    if command -v docker-compose >/dev/null 2>&1; then
+        docker-compose pull
+    else
+        docker compose pull
+    fi
+fi
 
 # Create necessary directories
 print_status "Creating directories..."
@@ -139,5 +151,6 @@ echo "2. Run 'make start' to start all services"
 echo "3. Run 'make health-check' to verify everything is working"
 echo "4. Access n8n at http://localhost:5678"
 echo "5. Access Ollama API at http://localhost:11434"
+echo "6. Access AI Bridge at http://localhost:8000/health"
 
 print_status "For more information, see README.md"

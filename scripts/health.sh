@@ -136,6 +136,9 @@ check_container "bws-ollama" "Ollama LLM Service" && ((PASSED_CHECKS++)) || ((FA
 check_container "bws-qdrant" "Qdrant Vector Database" && ((PASSED_CHECKS++)) || ((FAILED_CHECKS++))
 ((TOTAL_CHECKS++))
 
+check_container "bws-ai-bridge" "AI Bridge Service" && ((PASSED_CHECKS++)) || ((FAILED_CHECKS++))
+((TOTAL_CHECKS++))
+
 # Check service endpoints
 print_status "=== Service Health ==="
 
@@ -146,6 +149,9 @@ check_service "Ollama" "http://localhost:11434" "/api/tags" "LLM API" && ((PASSE
 ((TOTAL_CHECKS++))
 
 check_service "Qdrant" "http://localhost:6333" "/health" "Vector Database API" && ((PASSED_CHECKS++)) || ((FAILED_CHECKS++))
+((TOTAL_CHECKS++))
+
+check_service "AI Bridge" "http://localhost:8000" "/health" "AI Bridge API" && ((PASSED_CHECKS++)) || ((FAILED_CHECKS++))
 ((TOTAL_CHECKS++))
 
 # Check database connections

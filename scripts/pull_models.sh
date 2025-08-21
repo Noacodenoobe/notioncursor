@@ -95,13 +95,14 @@ fi
 
 print_success "Ollama is running and accessible"
 
-# Define models to download
+# Define models to download (use '|' as separator to avoid ':' conflicts)
 MODELS=(
-    "llama2:7b:General purpose model, good balance of performance and resource usage"
-    "llama2:13b:Higher quality model, requires more resources"
-    "codellama:7b:Specialized for code generation and analysis"
-    "mistral:7b:Fast and efficient model for general tasks"
-    "neural-chat:7b:Optimized for conversational AI"
+    "llama2:7b|General purpose model, good balance of performance and resource usage"
+    "llama2:13b|Higher quality model, requires more resources"
+    "codellama:7b|Specialized for code generation and analysis"
+    "mistral:7b|Fast and efficient model for general tasks"
+    "neural-chat:7b|Optimized for conversational AI"
+    "nomic-embed-text:latest|Embedding model for Qdrant/RAG"
 )
 
 # Download models
@@ -110,7 +111,7 @@ print_status "Downloading Ollama models..."
 FAILED_MODELS=()
 
 for model_info in "${MODELS[@]}"; do
-    IFS=':' read -r model description <<< "$model_info"
+    IFS='|' read -r model description <<< "$model_info"
     
     if pull_model "$model" "$description"; then
         print_success "✓ $model"

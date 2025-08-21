@@ -1,9 +1,10 @@
-.PHONY: help install start stop restart logs clean pull-models health-check git-setup git-commit git-push
+.PHONY: help install build start stop restart logs clean pull-models health-check git-setup git-commit git-push
 
 # Default target
 help:
 	@echo "BWS Stack - Available commands:"
 	@echo "  install      - Install and setup the entire stack"
+	@echo "  build        - Build images"
 	@echo "  start        - Start all services"
 	@echo "  stop         - Stop all services"
 	@echo "  restart      - Restart all services"
@@ -23,30 +24,41 @@ install:
 	@chmod +x scripts/install.sh
 	@./scripts/install.sh
 
+# Build images
+build:
+	@echo "Building images..."
+	@chmod +x scripts/compose.sh
+	@./scripts/compose.sh build
+
 # Start services
 start:
 	@echo "Starting BWS Stack..."
-	docker-compose up -d
+	@chmod +x scripts/compose.sh
+	@./scripts/compose.sh up -d
 	@echo "Services started. Check health with: make health-check"
 
 # Stop services
 stop:
 	@echo "Stopping BWS Stack..."
-	docker-compose down
+	@chmod +x scripts/compose.sh
+	@./scripts/compose.sh down
 
 # Restart services
 restart:
 	@echo "Restarting BWS Stack..."
-	docker-compose restart
+	@chmod +x scripts/compose.sh
+	@./scripts/compose.sh restart
 
 # Show logs
 logs:
-	docker-compose logs -f
+	@chmod +x scripts/compose.sh
+	@./scripts/compose.sh logs -f
 
 # Clean everything
 clean:
 	@echo "Cleaning BWS Stack..."
-	docker-compose down -v --remove-orphans
+	@chmod +x scripts/compose.sh
+	@./scripts/compose.sh down -v --remove-orphans
 	docker system prune -f
 
 # Pull Ollama models

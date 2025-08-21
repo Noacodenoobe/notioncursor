@@ -128,6 +128,7 @@ REQUIRED_PORTS=(
     "11434:Ollama"
     "6333:Qdrant"
     "6334:Qdrant Admin"
+    "8000:AI Bridge"
 )
 
 UNAVAILABLE_PORTS=()
@@ -200,6 +201,7 @@ if command_exists docker; then
         check_service_health "n8n" "http://localhost:5678" || true
         check_service_health "Ollama" "http://localhost:11434/api/tags" || true
         check_service_health "Qdrant" "http://localhost:6333/health" || true
+        check_service_health "AI Bridge" "http://localhost:8000/health" || true
     else
         print_status "No BWS containers are currently running"
         print_status "Run 'make start' to start the services"
