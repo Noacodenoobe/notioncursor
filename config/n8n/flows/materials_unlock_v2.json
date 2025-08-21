@@ -1,0 +1,120 @@
+{
+  "name": "Materials Unlock Workflow v2",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {"field": "minutes", "secondsInterval": 300}
+          ]
+        }
+      },
+      "id": "trigger",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "resource": "database",
+        "operation": "getAll",
+        "databaseId": "={{ $env.NOTION_DATABASE_ID_MATERIALS }}",
+        "filter": {
+          "and": [
+            {"property": "Status", "select": {"equals": "Locked"}},
+            {"property": "Required Tasks", "relation": {"is_not_empty": true}}
+          ]
+        }
+      },
+      "id": "get-locked-materials",
+      "name": "Get Locked Materials",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "resource": "database",
+        "operation": "getAll",
+        "databaseId": "={{ $env.NOTION_DATABASE_ID_TASKS }}",
+        "filter": {"and": [{"property": "Status", "select": {"equals": "Completed"}}]}
+      },
+      "id": "get-completed-tasks",
+      "name": "Get Completed Tasks",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [680, 200]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const materials = items; const completedTasks = $('Get Completed Tasks').all().map(i=>i.id); const results=[]; for (const m of materials){ const req = (m.json.properties['Required Tasks']?.relation||[]).map(r=>r.id); const ok = req.every(id=>completedTasks.includes(id)); results.push({json:{material:m.json, canUnlock:ok}});} return results;"
+      },
+      "id": "check-requirements",
+      "name": "Check Requirements",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {"conditions": [{"id": "cond","leftValue": "={{ $json.canUnlock }}","rightValue": true,"operator": {"type": "boolean","operation": "equal"}}],"combinator": "and"}
+      },
+      "id": "can-unlock",
+      "name": "Can Unlock?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "resource": "database",
+        "operation": "update",
+        "databaseId": "={{ $env.NOTION_DATABASE_ID_MATERIALS }}",
+        "pageId": "={{ $json.material.id }}",
+        "properties": {
+          "Status": {"select": {"name": "Available"}},
+          "Unlocked Date": {"date": {"start": "={{ new Date().toISOString() }}"}},
+          "Unlocked By": {"select": {"name": "System"}}
+        }
+      },
+      "id": "unlock-material",
+      "name": "Unlock Material",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [1340, 200]
+    },
+    {
+      "parameters": {
+        "resource": "page",
+        "operation": "create",
+        "parent": {"databaseId": "={{ $env.NOTION_DATABASE_ID_TASKS }}"},
+        "properties": {
+          "Name": {"title": [{"text": {"content": "Notify: {{ $json.material.properties.Name.title[0].text.content }} unlocked"}}]},
+          "Type": {"select": {"name": "Notification"}},
+          "Priority": {"select": {"name": "Low"}},
+          "Status": {"select": {"name": "Completed"}},
+          "Description": {"rich_text": [{"text": {"content": "Material unlocked automatically (all dependencies completed)."}}]}
+        }
+      },
+      "id": "create-notification",
+      "name": "Create Notification",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [1560, 200]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {"main": [[{"node": "Get Locked Materials", "type": "main", "index": 0}]]},
+    "Get Locked Materials": {"main": [[{"node": "Check Requirements", "type": "main", "index": 0}]]},
+    "Get Completed Tasks": {"main": [[{"node": "Check Requirements", "type": "main", "index": 0}]]},
+    "Check Requirements": {"main": [[{"node": "Can Unlock?", "type": "main", "index": 0}]]},
+    "Can Unlock?": {"main": [[{"node": "Unlock Material", "type": "main", "index": 0}], []]},
+    "Unlock Material": {"main": [[{"node": "Create Notification", "type": "main", "index": 0}]]}
+  },
+  "active": false,
+  "settings": {"executionOrder": "v1"},
+  "versionId": "2"
+}
+

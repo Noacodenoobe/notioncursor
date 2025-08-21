@@ -1,0 +1,142 @@
+{
+  "name": "Task Escalation Workflow v2",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "secondsInterval": 3600
+            }
+          ]
+        }
+      },
+      "id": "trigger",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const sevenDaysAgo = new Date(Date.now() - 7*24*3600*1000).toISOString();return {sevenDaysAgo};"
+      },
+      "id": "compute-date",
+      "name": "Compute 7d Ago",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "resource": "database",
+        "operation": "getAll",
+        "databaseId": "={{ $env.NOTION_DATABASE_ID_TASKS }}",
+        "filter": {
+          "and": [
+            {
+              "property": "Status",
+              "select": {
+                "equals": "Blocked"
+              }
+            },
+            {
+              "property": "Blocked Since",
+              "date": {
+                "before": "={{ $('Compute 7d Ago').first().json.sevenDaysAgo }}"
+              }
+            }
+          ]
+        }
+      },
+      "id": "get-blocked-tasks",
+      "name": "Get Blocked Tasks",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "conditions": [
+            {
+              "id": "has-items",
+              "leftValue": "={{ $json.length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "check-tasks",
+      "name": "Check if Tasks Exist",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "return items;"
+      },
+      "id": "loop-tasks",
+      "name": "Loop Tasks",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1120, 200]
+    },
+    {
+      "parameters": {
+        "resource": "database",
+        "operation": "update",
+        "databaseId": "={{ $env.NOTION_DATABASE_ID_TASKS }}",
+        "pageId": "={{ $json.id }}",
+        "properties": {
+          "Status": {"select": {"name": "Escalated"}},
+          "Priority": {"select": {"name": "High"}},
+          "Escalation Date": {"date": {"start": "={{ new Date().toISOString() }}"}}
+        }
+      },
+      "id": "escalate-task",
+      "name": "Escalate Task",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [1340, 200]
+    },
+    {
+      "parameters": {
+        "resource": "page",
+        "operation": "create",
+        "parent": {"databaseId": "={{ $env.NOTION_DATABASE_ID_RISKS }}"},
+        "properties": {
+          "Title": {"title": [{"text": {"content": "Escalated Task: {{ $json.properties.Name.title[0].text.content }}"}}]},
+          "Risk Type": {"select": {"name": "Task Blockage"}},
+          "Severity": {"select": {"name": "Medium"}},
+          "Description": {"rich_text": [{"text": {"content": "Task blocked > 7 days, escalated automatically."}}]}
+        }
+      },
+      "id": "create-risk",
+      "name": "Create Risk Entry",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [1560, 200]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {"main": [[{"node": "Compute 7d Ago", "type": "main", "index": 0}]]},
+    "Compute 7d Ago": {"main": [[{"node": "Get Blocked Tasks", "type": "main", "index": 0}]]},
+    "Get Blocked Tasks": {"main": [[{"node": "Check if Tasks Exist", "type": "main", "index": 0}]]},
+    "Check if Tasks Exist": {"main": [[{"node": "Loop Tasks", "type": "main", "index": 0}], []]},
+    "Loop Tasks": {"main": [[{"node": "Escalate Task", "type": "main", "index": 0}]]},
+    "Escalate Task": {"main": [[{"node": "Create Risk Entry", "type": "main", "index": 0}]]}
+  },
+  "active": false,
+  "settings": {"executionOrder": "v1"},
+  "versionId": "2"
+}
+
